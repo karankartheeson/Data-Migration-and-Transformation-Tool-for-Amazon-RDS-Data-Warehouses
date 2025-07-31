@@ -87,7 +87,7 @@ def df_dict_making(**kwargs):
 def inserting_mongodb(**kwargs):
     ti = kwargs['ti']
     docs_mongo= ti.xcom_pull(task_ids='df_dict_making_task', key='fourth_key')
-    con=py.MongoClient("mongodb+srv://karan:Karan2000@cluster0.jwd6v.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+    con=py.MongoClient("mongodb+srv://karan:<PASSWORD>@cluster0.jwd6v.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
     db=con['airflow']
     for i, record_set in enumerate(docs_mongo):
         if record_set:
